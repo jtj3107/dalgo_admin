@@ -9,6 +9,12 @@ public class Main {
 	public String showMain() {
 		return "admin/main";
 	}	
+	
+	@RequestMapping("/admin/main")
+	public String showMain2() {
+		return "admin/main";
+	}	
+	
 	@RequestMapping("/")
 	public String showRoot() {
 		return "redirect:admin/main";
