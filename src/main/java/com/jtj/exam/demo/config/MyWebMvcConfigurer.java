@@ -6,6 +6,8 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistration
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import com.jtj.exam.demo.interceptor.BeforeActionInterceptor;
+
 @Configuration
 public class MyWebMvcConfigurer implements WebMvcConfigurer{
 	// beforeActionInterceptor 인터셉터 불러오기
