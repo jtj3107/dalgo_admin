@@ -25,3 +25,102 @@ body {
     text-decoration: none;
     background-color: transparent;
 }
+
+.col {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+.leQzCI {
+    font-family: SpoqaHanSans, sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -1.6px;
+    color: rgb(61, 64, 71);
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col-form-label {
+    padding-top: calc(0.375rem + 1px);
+    padding-bottom: calc(0.375rem + 1px);
+    margin-bottom: 0;
+    font-size: inherit;
+    line-height: 1.5;
+}
+
+.jURzqC {
+    font-family: SpoqaHanSans, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.5px;
+    text-align: right;
+    color: rgb(41, 44, 51);
+    float: left;
+}
+
+.col-sm-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+}
+
+.fRtgut {
+    height: 54px;
+    border-radius: 4px;
+    border: 1px solid rgb(234, 233, 238);
+    background-color: rgb(255, 255, 255);
+    font-size: 15px;
+    line-height: 1.73;
+    letter-spacing: -0.37px;
+    color: rgb(27, 31, 38);
+}
+
+.form-check {
+    position: relative;
+    display: block;
+    padding-left: 1.25rem;
+}
+
+.offset-sm-3 {
+    margin-left: 25%;
+}
+
+.col-sm-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+}
+
+.fsDzEI {
+    min-width: 214px;
+    min-height: 54px;
+    border-radius: 27px;
+    background-color: rgb(201, 203, 212);
+    display: flex;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    cursor: default;
+}
+
+.gHdAVb {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+

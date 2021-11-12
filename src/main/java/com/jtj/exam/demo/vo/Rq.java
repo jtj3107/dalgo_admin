@@ -20,9 +20,9 @@ public class Rq {
 	@Getter
 	private boolean isLogined;
 	@Getter
-	private int loginedMemberId;
+	private int loginedAdminId;
 	@Getter
-	private Member loginedMember;
+	private Admin loginedAdmin;
 
 	private HttpServletRequest req;
 	private HttpServletResponse resp;
@@ -68,12 +68,12 @@ public class Rq {
 		print(str + "\n");
 	}
 	
-//	public void login(Member member) {
-//		session.setAttribute("loginedMemberId", member.getId());
+//	public void login(Admin admin) {
+//		session.setAttribute("loginedAdminId", admin.getId());
 //	}
 
 	public void logout() {
-		session.removeAttribute("loginedMemberId");
+		session.removeAttribute("loginedAdminId");
 	}
 
 	public String historyBackJsOnView(String msg) {

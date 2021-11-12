@@ -102,3 +102,22 @@ CREATE TABLE `member` (
   `isDriving` TINYINT(4) DEFAULT 0 COMMENT '운행중인가여부?',
   `isBooster` TINYINT(4) DEFAULT 0 COMMENT '부스터 시작여부?'
 ) ENGINE=INNODB DEFAULT CHARSET=utf32;
+
+CREATE TABLE `admin` (
+  `admin_Id` INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT '어드민 ID',
+  `unread` INT(11) NOT NULL DEFAULT 0 COMMENT '읽지 않은 알림의 갯수',
+  `admin_register_datetime` DATETIME NOT NULL COMMENT '생성 시각',
+  `admin_lastlogin_datetime` DATETIME NOT NULL COMMENT '마지막 접속 시각',
+  `admin_email` VARCHAR(140) DEFAULT NULL COMMENT '로그인용 이메일 주소',
+  `admin_password` BINARY(60) DEFAULT NULL COMMENT 'Salted Password',
+  `updatedAt` DATETIME NOT NULL COMMENT '업데이트 시각',
+  `lastLoginToken` VARCHAR(10) NOT NULL COMMENT '마지막 접속 날짜 토큰 (YYYY-MM-DD)'
+) ENGINE=INNODB DEFAULT CHARSET=utf32;
+
+INSERT INTO `admin`
+SET admin_register_datetime = NOW(),
+admin_lastlogin_datetime = NOW(),
+admin_email = 'admin@ashk.co.kr',
+admin_password = UNHEX(SHA2('31073107', 256)),
+`updatedAt` = NOW(),
+`lastLoginToken` = '2021-11-12'
