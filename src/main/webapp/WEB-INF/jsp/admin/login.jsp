@@ -37,6 +37,7 @@
             <label for="loginEmail" class="col-sm-3 col-form-label">
               <span class="sc-jhAzac jURzqC">이메일 아이디</span>
             </label>
+            <div style="flex-grow: 1"></div>
             <div class="col-sm-9">
               <input type="email" name="email" id="loginEmail" placeholder="아이디를 입력해주세요." class="sc-dnqmqq fRtgut" value=""
                 style="width: 100%;">
@@ -46,6 +47,7 @@
             <label for="loginPassword" class="col-sm-3 col-form-label">
               <span class="sc-jhAzac jURzqC">비밀번호</span>
             </label>
+            <div style="flex-grow: 1"></div>
             <div class="col-sm-9">
               <input type="password" name="password" id="loginPassword" placeholder="비밀번호를 입력해주세요." class="sc-dnqmqq fRtgut" value=""
                 style="width: 100%;">
@@ -54,7 +56,7 @@
           <div class="sc-bRBYWo jeGhWX" style="height: 51px;"></div>
           <div class="row form-check">
             <div class="col-sm-9 offset-sm-3" style="padding-left: 0px; height: 48px;">
-              <div disabled="" class="sc-cMljjf fsDzEI">
+              <div class="sc-cMljjf fsDzEI">
                 <span class="sc-jAaTju gHdAVb">로그인</span>
               </div>
             </div>
