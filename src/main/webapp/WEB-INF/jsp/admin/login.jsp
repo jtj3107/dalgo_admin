@@ -5,10 +5,57 @@
 <meta charset="UTF-8">
 <title>Dalgo</title>
 
+<!-- 제이쿼리 불러오기 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- 테일윈드 불러오기 -->
+<!-- 노말라이즈, 라이브러리까지 한방에 해결 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.15/tailwind.min.css" />
+
+<!-- 데이지 UI -->
+<link href="https://cdn.jsdelivr.net/npm/daisyui@1.14.0/dist/full.css" rel="stylesheet" type="text/css" />
+
+<!-- 폰트어썸 불러오기 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
 <!-- 사이트 공통 CSS -->
 <link rel="stylesheet" href="/resource/common.css" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
 </head>
 <body>
+
+<script>
+	let MemberLogin_submitDone = false;
+	function MemberLogin__submit(form) {
+		if(MemberLogin_submitDone) {
+			return;
+		}
+		
+		form.email.value = form.email.value.trim();
+		
+		if(form.email.value.length == 0) {
+			alert('로그인 아이디를 입력해주세요.');
+			form.email.focus();
+			return;
+		}
+		
+		form.password.value = form.password.value.trim();
+		
+		if(form.password.value.length == 0) {
+			alert('로그인 비밀번호를 입력해주세요.');
+			form.password.focus();
+			return;
+		}
+		
+		form.passwordReal.value = sha256(form.password.value);
+		form.password.value = "";
+		
+		MemberLogin__submitDone = true;
+		form.submit();
+	}
+</script>
+
   <div style="flex-grow: 1;">
     <div
       style="background-color: rgb(27, 31, 38); height: 84px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid silver;">
@@ -32,7 +79,8 @@
           </div>
         </div>
         <div class="sc-bRBYWo dXqfar" style="height: 56px;"></div>
-        <form class="">
+        <form class="" action="/admin/doLogin" method="POST" onsubmit="MemberLogin__submit(this); return false;">
+          <input type="hidden" name="passwordReal" />
           <div class="row form-group">
             <label for="loginEmail" class="col-sm-3 col-form-label">
               <span class="sc-jhAzac jURzqC">이메일 아이디</span>
@@ -56,8 +104,8 @@
           <div class="sc-bRBYWo jeGhWX" style="height: 51px;"></div>
           <div class="row form-check">
             <div class="col-sm-9 offset-sm-3" style="padding-left: 0px; height: 48px;">
-              <div class="sc-cMljjf fsDzEI">
-                <span class="sc-jAaTju gHdAVb">로그인</span>
+              <div class="sc-cMljjf kFBMtk">
+                <button type="submit" class="sc-jAaTju gHdAVb">로그인</button>
               </div>
             </div>
           </div>
